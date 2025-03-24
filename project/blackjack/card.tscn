@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d047gqvsck2se"]
+
+[ext_resource type="Script" path="res://blackjack/card.gd" id="1_ij153"]
+[ext_resource type="Texture2D" uid="uid://vu5avw63rqdn" path="res://blackjack/all_cards_2.png" id="3_5jmyt"]
+[ext_resource type="Texture2D" uid="uid://0yr5xh067ots" path="res://blackjack/card_back.png" id="3_ggdyw"]
+
+[node name="Card" type="Node2D" groups=["cards"]]
+script = ExtResource("1_ij153")
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ggdyw")
+
+[node name="AllCards" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_5jmyt")
+region_enabled = true
+region_rect = Rect2(4, 504.5, 102, 144)

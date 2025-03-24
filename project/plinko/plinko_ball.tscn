@@ -1,0 +1,154 @@
+[gd_scene load_steps=35 format=3 uid="uid://cgogyd6xv3tv6"]
+
+[ext_resource type="Script" path="res://plinko/plinko_ball.gd" id="1_8kyq5"]
+[ext_resource type="Texture2D" uid="uid://cxyceh1u01tkg" path="res://plinko/images/bear.png" id="1_yswqp"]
+[ext_resource type="Texture2D" uid="uid://c5gochiowaa1o" path="res://plinko/images/buffalo.png" id="2_8rojo"]
+[ext_resource type="Texture2D" uid="uid://nj8vx4w42fwm" path="res://plinko/images/chick.png" id="3_7yhi7"]
+[ext_resource type="Texture2D" uid="uid://u8gnhlbivshk" path="res://plinko/images/chicken.png" id="4_rh7y1"]
+[ext_resource type="Texture2D" uid="uid://dthua2s82o2aj" path="res://plinko/images/cow.png" id="5_vrhe0"]
+[ext_resource type="Texture2D" uid="uid://jr5jh6yohlq2" path="res://plinko/images/crocodile.png" id="6_jejte"]
+[ext_resource type="Texture2D" uid="uid://3xi0pwknl1ec" path="res://plinko/images/dog.png" id="7_0mc31"]
+[ext_resource type="Texture2D" uid="uid://7ldnkd1mc021" path="res://plinko/images/duck.png" id="8_gxrbh"]
+[ext_resource type="Texture2D" uid="uid://e1g3su48acb8" path="res://plinko/images/elephant.png" id="9_lew1p"]
+[ext_resource type="Texture2D" uid="uid://bdjw1qxdcuta0" path="res://plinko/images/frog.png" id="10_xmxj8"]
+[ext_resource type="Texture2D" uid="uid://b3ce3u46v8d6a" path="res://plinko/images/giraffe.png" id="11_cikpc"]
+[ext_resource type="Texture2D" uid="uid://yyl041atjlgu" path="res://plinko/images/goat.png" id="12_j0oj6"]
+[ext_resource type="Texture2D" uid="uid://cwnpt47mbm5kn" path="res://plinko/images/gorilla.png" id="13_yeucp"]
+[ext_resource type="Texture2D" uid="uid://dk1oioq6nqjue" path="res://plinko/images/hippo.png" id="14_jg5mc"]
+[ext_resource type="Texture2D" uid="uid://bnxk5jh2sojm2" path="res://plinko/images/horse.png" id="15_v121x"]
+[ext_resource type="Texture2D" uid="uid://dajhgebuv7ttx" path="res://plinko/images/monkey.png" id="16_mxvne"]
+[ext_resource type="Texture2D" uid="uid://bqt21v42ubpxp" path="res://plinko/images/moose.png" id="17_tvtdk"]
+[ext_resource type="Texture2D" uid="uid://df7j327g7bfry" path="res://plinko/images/narwhal.png" id="18_k0ssl"]
+[ext_resource type="Texture2D" uid="uid://bgl4kni80xbai" path="res://plinko/images/owl.png" id="19_cw871"]
+[ext_resource type="Texture2D" uid="uid://dvqw2x5dcqrvb" path="res://plinko/images/panda.png" id="20_3xsc2"]
+[ext_resource type="Texture2D" uid="uid://cad88a482i4qi" path="res://plinko/images/parrot.png" id="21_ner12"]
+[ext_resource type="Texture2D" uid="uid://cue6yqw3hx1jt" path="res://plinko/images/penguin.png" id="22_mfbka"]
+[ext_resource type="Texture2D" uid="uid://cmckme7lv72vj" path="res://plinko/images/pig.png" id="23_x60qm"]
+[ext_resource type="Texture2D" uid="uid://bdkyj0b6s25cq" path="res://plinko/images/rabbit.png" id="24_itmjd"]
+[ext_resource type="Texture2D" uid="uid://d2vmufq0lwo81" path="res://plinko/images/rhino.png" id="25_t6avb"]
+[ext_resource type="Texture2D" uid="uid://dubchtsf301jq" path="res://plinko/images/sloth.png" id="26_aeo6y"]
+[ext_resource type="Texture2D" uid="uid://oidirpkng8g" path="res://plinko/images/snake.png" id="27_usnpu"]
+[ext_resource type="Texture2D" uid="uid://c8kxuw13ikbpq" path="res://plinko/images/walrus.png" id="28_rmv05"]
+[ext_resource type="Texture2D" uid="uid://d04iyma18cv4x" path="res://plinko/images/whale.png" id="29_7xmua"]
+[ext_resource type="Texture2D" uid="uid://dn7gbfsa1x3k1" path="res://plinko/images/zebra.png" id="30_mf61g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8y66y"]
+bounce = 0.05
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bayri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yswqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8rojo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7yhi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rh7y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vrhe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jejte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0mc31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gxrbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lew1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xmxj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cikpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j0oj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yeucp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jg5mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v121x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mxvne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tvtdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k0ssl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cw871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3xsc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ner12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mfbka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_x60qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_itmjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_t6avb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_aeo6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_usnpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rmv05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7xmua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mf61g")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ly58"]
+radius = 13.0
+
+[node name="PlinkoBall" type="RigidBody2D"]
+z_index = 5
+collision_layer = 6
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_8y66y")
+gravity_scale = 0.5
+script = ExtResource("1_8kyq5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_bayri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ly58")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]

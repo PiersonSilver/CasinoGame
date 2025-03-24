@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://brmmmx0fjs10t"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_oy4ba"]
+[ext_resource type="Texture2D" uid="uid://cd02rf05uf4uq" path="res://CasinoSimMenuBackground.png" id="2_a20oj"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oy4ba")
+
+[node name="CasinoSimMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_a20oj")
+
+[node name="CreditButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 528.0
+offset_right = 628.0
+offset_bottom = 559.0
+text = "Licenses"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 453.0
+offset_right = 686.0
+offset_bottom = 522.0
+text = "Enter The Casino!"
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 318.0
+offset_right = 414.0
+offset_bottom = 471.0
+text = "Controls:
+W: Up
+A: Left
+S: Down
+D: Right
+E: Interact"
+horizontal_alignment = 1
+
+[node name="Games" type="Label" parent="."]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 342.0
+offset_right = 853.0
+offset_bottom = 469.0
+text = "Games Included:
+Slots
+Black Jack
+Plinko
+Coin Flip"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

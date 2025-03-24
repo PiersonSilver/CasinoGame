@@ -1,0 +1,170 @@
+[gd_scene load_steps=14 format=3 uid="uid://qs2cas4y7svi"]
+
+[ext_resource type="Texture2D" uid="uid://cxp50jgduy561" path="res://coin_flip/goldcoin-frame1.png" id="1_lxa82"]
+[ext_resource type="Script" path="res://coin_flip/coin_flip.gd" id="1_n3000"]
+[ext_resource type="Texture2D" uid="uid://cgq823ghk8ov" path="res://coin_flip/goldcoin-frame2.png" id="2_1s7l6"]
+[ext_resource type="Texture2D" uid="uid://d3lliq7c2xdj" path="res://coin_flip/goldcoin-frame3.png" id="3_c7p58"]
+[ext_resource type="Texture2D" uid="uid://ch20bnu6mf0x4" path="res://coin_flip/goldcoin-frame4.png" id="4_g5h1c"]
+[ext_resource type="Texture2D" uid="uid://cg322kbdstax3" path="res://coin_flip/goldcoin-frame5.png" id="5_oy3pw"]
+[ext_resource type="Texture2D" uid="uid://di4yl817m8smf" path="res://coin_flip/goldcoin-frame6.png" id="6_ikqeq"]
+[ext_resource type="Texture2D" uid="uid://dbtykkkv1afn5" path="res://coin_flip/goldcoin-frame1-heads.png" id="7_p8oqo"]
+[ext_resource type="Texture2D" uid="uid://cvro2sjuivtu4" path="res://coin_flip/goldcoin-frame1-tails.png" id="8_ptdhe"]
+[ext_resource type="AudioStream" uid="uid://bo3epx1saok3v" path="res://coin_flip/coinflip.mp3" id="10_y6elo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hpkk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lxa82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1s7l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7p58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g5h1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oy3pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ikqeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p8oqo")
+}],
+"loop": false,
+"name": &"heads",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lxa82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1s7l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7p58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g5h1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oy3pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ikqeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ptdhe")
+}],
+"loop": false,
+"name": &"tails",
+"speed": 6.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnndx"]
+font_size = 76
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kgqy5"]
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CoinFlip" type="Node"]
+script = ExtResource("1_n3000")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.223529, 0.192157, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -323.0
+offset_right = 200.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.619608, 0.454902, 0.329412, 1)
+
+[node name="CoinSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 355)
+sprite_frames = SubResource("SpriteFrames_8hpkk")
+animation = &"heads"
+
+[node name="ResultLabel" type="Label" parent="."]
+visible = false
+offset_left = 382.0
+offset_top = 107.0
+offset_right = 769.0
+offset_bottom = 212.0
+text = "YOU LOSE"
+label_settings = SubResource("LabelSettings_dnndx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 60.0
+offset_bottom = 59.0
+
+[node name="HeadsButton" type="Button" parent="Options"]
+offset_left = 369.0
+offset_top = 258.0
+offset_right = 426.0
+offset_bottom = 289.0
+text = "Heads"
+
+[node name="TailsButton" type="Button" parent="Options"]
+offset_left = 695.0
+offset_top = 258.0
+offset_right = 739.0
+offset_bottom = 289.0
+text = "Tails"
+
+[node name="GuessLabel" type="Label" parent="Options"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 252.0
+offset_right = 671.0
+offset_bottom = 291.0
+text = "Guess the Result"
+label_settings = SubResource("LabelSettings_kgqy5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_y6elo")
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_left = 214.0
+offset_top = 578.0
+offset_right = 306.0
+offset_bottom = 639.0
+text = "Return"
+
+[connection signal="animation_finished" from="CoinSprite" to="." method="_on_coin_sprite_animation_finished"]
+[connection signal="pressed" from="Options/HeadsButton" to="." method="_on_heads_button_pressed"]
+[connection signal="pressed" from="Options/TailsButton" to="." method="_on_tails_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

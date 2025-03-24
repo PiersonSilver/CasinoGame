@@ -1,0 +1,461 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8ukqibgfjsb1"]
+
+[ext_resource type="Texture2D" uid="uid://dt1ejvpjkraxy" path="res://plinko/Plinko Machine.png" id="1_hhnar"]
+[ext_resource type="Script" path="res://plinko/plinko.gd" id="1_wiaa5"]
+[ext_resource type="PackedScene" uid="uid://c2fwktgp42vf3" path="res://plinko/plinko_peg.tscn" id="2_s6i4j"]
+[ext_resource type="Texture2D" uid="uid://dt2pi4dismqxb" path="res://plinko/images/line.png" id="4_cxa24"]
+[ext_resource type="Texture2D" uid="uid://bg3g5cq7srcbg" path="res://plinko/images/Placeholder Ball.png" id="5_xc67w"]
+[ext_resource type="PackedScene" uid="uid://crpgyny42kjsa" path="res://plinko/plinko_section_area.tscn" id="7_tqq7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfuh6"]
+size = Vector2(40, 96)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uj6x7"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Plinko" type="Node2D"]
+script = ExtResource("1_wiaa5")
+
+[node name="PlinkoMachine" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_hhnar")
+metadata/_edit_lock_ = true
+
+[node name="OutlineBarrier" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutlineBarrier"]
+build_mode = 1
+polygon = PackedVector2Array(345, 236, 356, 498, 365, 565, 788, 566, 808, 497, 820, 236)
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(576, 327)
+texture = ExtResource("4_cxa24")
+
+[node name="PlaceholderBall" type="Sprite2D" parent="."]
+position = Vector2(802, 255)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_xc67w")
+
+[node name="Pegs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 332.0
+offset_right = 616.0
+offset_bottom = 372.0
+metadata/_edit_lock_ = true
+
+[node name="PlinkoPeg" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-216, -29)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg2" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-101, -29)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg3" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(5, -29)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg4" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(113, -29)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg5" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(231, -29)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg6" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(167, -8)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg7" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(60, -8)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg8" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-47, -8)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg9" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-155, -8)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg10" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-216, 30)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg11" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-101, 33)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg12" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(5, 33)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg13" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(113, 33)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg14" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(228, 32)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg15" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(167, 54)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg16" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(60, 54)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg17" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-47, 54)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg18" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-157, 57)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg28" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-211, 97)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg29" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-75, 94)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg30" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(35, 101)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg31" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(140, 103)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg32" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-157, 163)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg33" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(225, 112)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg34" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(86, 121)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg35" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-21, 115)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg36" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-139, 116)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg37" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-208, 178)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg38" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-73, 136)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg39" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(23, 155)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg40" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(215, 186)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg41" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(176, 143)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg42" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(136, 176)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg43" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(74, 176)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg44" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-31, 174)
+scale = Vector2(0.25, 0.25)
+
+[node name="PlinkoPeg45" parent="Pegs" instance=ExtResource("2_s6i4j")]
+position = Vector2(-106, 181)
+scale = Vector2(0.25, 0.25)
+
+[node name="Walls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_right = 36.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="SectionWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(401, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(437, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall2"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall2"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(473, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall3"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall3"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(509, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall4"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall4"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall5" type="StaticBody2D" parent="Walls"]
+position = Vector2(545, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall5"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall5"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall6" type="StaticBody2D" parent="Walls"]
+position = Vector2(581, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall6"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall6"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall7" type="StaticBody2D" parent="Walls"]
+position = Vector2(617, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall7"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall7"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall8" type="StaticBody2D" parent="Walls"]
+position = Vector2(653, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall8"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall8"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall9" type="StaticBody2D" parent="Walls"]
+position = Vector2(689, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall9"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall9"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall10" type="StaticBody2D" parent="Walls"]
+position = Vector2(725, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall10"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall10"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="SectionWall11" type="StaticBody2D" parent="Walls"]
+position = Vector2(761, 554)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Line2" type="Sprite2D" parent="Walls/SectionWall11"]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.05, 0.25)
+texture = ExtResource("4_cxa24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SectionWall11"]
+scale = Vector2(0.05, 0.25)
+shape = SubResource("RectangleShape2D_jfuh6")
+
+[node name="Sections" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_right = 36.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="PlinkoSectionArea" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(384, 555)
+scale = Vector2(0.95, 1)
+_value = 25.0
+_display = "25"
+
+[node name="PlinkoSectionArea2" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(419, 555)
+_value = 5.0
+_display = "5"
+
+[node name="PlinkoSectionArea3" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(455, 555)
+_value = 2.0
+_display = "2"
+
+[node name="PlinkoSectionArea4" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(491, 555)
+_value = 0.5
+_display = ".5"
+
+[node name="PlinkoSectionArea5" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(527, 555)
+_value = 0.25
+_display = ".25"
+
+[node name="PlinkoSectionArea6" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(563, 555)
+_value = 0.1
+_display = ".1"
+
+[node name="PlinkoSectionArea7" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(599, 555)
+_value = 0.1
+_display = ".1"
+
+[node name="PlinkoSectionArea8" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(635, 555)
+_value = 0.25
+_display = ".25"
+
+[node name="PlinkoSectionArea9" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(671, 555)
+_value = 0.5
+_display = ".5"
+
+[node name="PlinkoSectionArea10" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(707, 555)
+_value = 2.0
+_display = "2"
+
+[node name="PlinkoSectionArea11" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(743, 555)
+_value = 5.0
+_display = "5"
+
+[node name="PlinkoSectionArea12" parent="Sections" instance=ExtResource("7_tqq7d")]
+position = Vector2(779, 555)
+scale = Vector2(0.95, 1)
+_value = 25.0
+_display = "25"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = 592.0
+offset_right = 793.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press 'SPACE' to Drop!"
+label_settings = SubResource("LabelSettings_uj6x7")
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_left = 154.0
+offset_top = 503.0
+offset_right = 238.0
+offset_bottom = 557.0
+text = "Return"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

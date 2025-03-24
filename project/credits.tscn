@@ -1,0 +1,253 @@
+[gd_scene load_steps=3 format=3 uid="uid://cynebsakog05v"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_co6c8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxqjl"]
+font_size = 48
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_co6c8")
+
+[node name="CCBy40Link" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -276.0
+offset_top = 154.0
+offset_right = 277.0
+offset_bottom = 182.0
+grow_horizontal = 2
+text = " licensed under Creative Commons Attribution 4.0 International License"
+underline = 1
+uri = "https://creativecommons.org/licenses/by/4.0/"
+
+[node name="SlotItchLink" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 128.0
+offset_right = 187.0
+offset_bottom = 155.0
+grow_horizontal = 2
+text = "Caz Wolf's Pixel Fantasy Slot Machine Asset Pack"
+underline = 1
+uri = "https://cazwolf.itch.io/pixel-slot-machine"
+
+[node name="SlotMachineAssetCredit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 104.0
+offset_right = 123.0
+offset_bottom = 127.0
+grow_horizontal = 2
+text = "Slot Machine Visaul Assets from"
+
+[node name="CreditsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_right = 82.0
+offset_bottom = 67.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_uxqjl")
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -87.0
+offset_right = 65.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return to Menu"
+
+[node name="CC0Link" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -156.5
+offset_top = -408.0
+offset_right = 156.5
+offset_bottom = -368.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "licensed under CC0 1.0 Universal License"
+underline = 1
+uri = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+[node name="BlackjackItchLink" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -432.0
+offset_right = 126.0
+offset_bottom = -406.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Natomarcacini's Card Asset Pack"
+underline = 1
+uri = "https://natomarcacini.itch.io/card-asset-pack"
+
+[node name="BlackjackAssetCredit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -109.5
+offset_top = -455.0
+offset_right = 109.5
+offset_bottom = -432.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Blackjack Visual Assets from"
+
+[node name="JephedCredit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 286.0
+offset_right = 204.0
+offset_bottom = 309.0
+grow_horizontal = 2
+text = "Casino Tiles, Decorations, and Character Model From"
+
+[node name="JephedLink" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.5
+offset_top = 308.0
+offset_right = 277.5
+offset_bottom = 335.0
+grow_horizontal = 2
+text = "Jephed, Game Between The Lines, https://gamebetweenthelines.com/"
+underline = 1
+uri = "https://gamebetweenthelines.com/"
+
+[node name="KennyCredit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 352.0
+offset_right = 204.0
+offset_bottom = 375.0
+grow_horizontal = 2
+text = "Plink Ball Animal Sprites From"
+horizontal_alignment = 1
+
+[node name="KennyLink" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -274.0
+offset_right = 146.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Kenney's Animal Pack Redux"
+underline = 1
+uri = "https://kenney.nl/assets/animal-pack-redux"
+
+[node name="CC0Link2" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -156.5
+offset_top = -250.0
+offset_right = 156.5
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "licensed under CC0 1.0 Universal License"
+underline = 1
+uri = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+[node name="KennyCredit2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 435.0
+offset_right = 204.0
+offset_bottom = 458.0
+grow_horizontal = 2
+text = "Black Jack Card Dealing Sound From"
+horizontal_alignment = 1
+
+[node name="KennyLink2" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -191.0
+offset_right = 136.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Kenney's Casino Sound Effects"
+underline = 1
+uri = "https://opengameart.org/content/54-casino-sound-effects-cards-dice-chips"
+
+[node name="CC0Link3" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -156.5
+offset_top = -167.0
+offset_right = 156.5
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "licensed under CC0 1.0 Universal License"
+underline = 1
+uri = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

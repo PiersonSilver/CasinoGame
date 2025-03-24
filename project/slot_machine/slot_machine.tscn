@@ -1,0 +1,366 @@
+[gd_scene load_steps=24 format=3 uid="uid://iotnqohh47qx"]
+
+[ext_resource type="Script" path="res://slot_machine/slot_machine.gd" id="1_r3c6y"]
+[ext_resource type="Texture2D" uid="uid://didbj7baogt61" path="res://slot_machine/slot-machine1.png" id="2_bkdab"]
+[ext_resource type="Texture2D" uid="uid://ccv8ljr0salxl" path="res://slot_machine/SymbolStrip3.png" id="3_1a5eh"]
+[ext_resource type="Texture2D" uid="uid://cfd3hkyql3peo" path="res://slot_machine/slot-machine4.png" id="4_8tjsf"]
+[ext_resource type="Texture2D" uid="uid://c052ioyna4ci0" path="res://slot_machine/slot-machine2.png" id="5_2q3qn"]
+[ext_resource type="Texture2D" uid="uid://dagdbtx10bh5t" path="res://slot_machine/slot-machine3.png" id="6_wn7h1"]
+[ext_resource type="AudioStream" uid="uid://c3flyu6iy506n" path="res://slot_machine/losesound.mp3" id="7_2c7pg"]
+[ext_resource type="AudioStream" uid="uid://b1wp88vo3f63a" path="res://slot_machine/slotmachinewin.mp3" id="7_ls0ie"]
+
+[sub_resource type="Animation" id="Animation_ehcrg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolStripLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(444, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_rwa70"]
+resource_name = "spin"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolStripLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(444, 30), Vector2(444, 800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6qqb"]
+_data = {
+"RESET": SubResource("Animation_ehcrg"),
+"spin": SubResource("Animation_rwa70")
+}
+
+[sub_resource type="Animation" id="Animation_ftrkr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolStripMiddle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(579, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_ia4p4"]
+resource_name = "spin"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolStripMiddle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(579, 30), Vector2(579, 800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t80pa"]
+_data = {
+"RESET": SubResource("Animation_ftrkr"),
+"spin": SubResource("Animation_ia4p4")
+}
+
+[sub_resource type="Animation" id="Animation_cq441"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolStripRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(714, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_0biyt"]
+resource_name = "spin"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolStripRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(714, 30), Vector2(714, 800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_23b75"]
+_data = {
+"RESET": SubResource("Animation_cq441"),
+"spin": SubResource("Animation_0biyt")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ury5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2q3qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wn7h1")
+}],
+"loop": false,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wn7h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2q3qn")
+}],
+"loop": false,
+"name": &"return",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ygbty"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_xsmin"]
+font_size = 200
+font_color = Color(0, 1, 0, 1)
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 80
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(5, 3)
+
+[sub_resource type="Animation" id="Animation_u4k0m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.5664]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_5yayp"]
+resource_name = "win"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.733333, 0.933333, 1.13333, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(2.2974, 2.2974),
+"update": 0,
+"values": [6.28319, -12.5664]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(2.2974, 2.2974),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbn7f"]
+_data = {
+"RESET": SubResource("Animation_u4k0m"),
+"win": SubResource("Animation_5yayp")
+}
+
+[node name="SlotMachine" type="Node"]
+script = ExtResource("1_r3c6y")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45098, 0.176471, 0.184314, 1)
+
+[node name="SlotMachineBack" type="Sprite2D" parent="."]
+position = Vector2(573, 324)
+scale = Vector2(1.04006, 1.04006)
+texture = ExtResource("2_bkdab")
+metadata/_edit_lock_ = true
+
+[node name="LeftAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j6qqb")
+}
+
+[node name="MiddleAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RightAnimation")
+libraries = {
+"": SubResource("AnimationLibrary_t80pa")
+}
+
+[node name="RightAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_23b75")
+}
+
+[node name="SymbolStripLeft" type="Sprite2D" parent="."]
+position = Vector2(444, 30)
+texture = ExtResource("3_1a5eh")
+
+[node name="SymbolStripMiddle" type="Sprite2D" parent="."]
+position = Vector2(579, 30)
+texture = ExtResource("3_1a5eh")
+
+[node name="SymbolStripRight" type="Sprite2D" parent="."]
+position = Vector2(714, 30)
+texture = ExtResource("3_1a5eh")
+
+[node name="SlotMachineFront" type="Sprite2D" parent="."]
+position = Vector2(573, 324)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("4_8tjsf")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedHandle" type="AnimatedSprite2D" parent="."]
+position = Vector2(573, 324)
+scale = Vector2(1.04, 1.04)
+sprite_frames = SubResource("SpriteFrames_7ury5")
+animation = &"pull"
+metadata/_edit_lock_ = true
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -227.0
+offset_top = -53.0
+offset_right = 235.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Press 'Space' to Spin!"
+label_settings = SubResource("LabelSettings_ygbty")
+horizontal_alignment = 1
+
+[node name="WinMessage" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -136.0
+offset_right = 504.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -12.5664
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(500, 137)
+text = "YOU WIN!!"
+label_settings = SubResource("LabelSettings_xsmin")
+
+[node name="WinAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../WinMessage")
+libraries = {
+"": SubResource("AnimationLibrary_jbn7f")
+}
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2c7pg")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ls0ie")
+
+[node name="ReturnButton" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_top = 170.0
+offset_right = 230.0
+offset_bottom = 255.0
+grow_vertical = 2
+text = "Return"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
